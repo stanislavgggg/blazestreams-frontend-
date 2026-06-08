@@ -679,9 +679,6 @@ export default function StreamApp() {
 
   useEffect(() => {
     tgReady();
-    try {
-      setOnboarded(window.localStorage.getItem("mp_onboarded") === "1");
-    } catch {}
   }, []);
 
   const cfgQ = useQuery({ queryKey: ["config"], queryFn: api.config, staleTime: 5 * 60_000 });
@@ -816,9 +813,6 @@ export default function StreamApp() {
         <Onboarding
           lang={lang}
           onEnter={() => {
-            try {
-              window.localStorage.setItem("mp_onboarded", "1");
-            } catch {}
             setOnboarded(true);
           }}
         />
