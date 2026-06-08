@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "pulse-frontend",
+  "name": "blazestreams-frontend",
   "compatibility_date": "2026-06-08",
   "compatibility_flags": ["nodejs_compat"],
   "main": "dist/server/server.js",
