@@ -785,7 +785,8 @@ export default function StreamApp() {
   }, [qc]);
 
   const onTouchStart = (e: React.TouchEvent) => {
-    if ((containerRef.current?.scrollTop ?? 1) <= 0) startY.current = e.touches[0].clientY;
+    if ((window.scrollY || document.documentElement.scrollTop) <= 0)
+      startY.current = e.touches[0].clientY;
   };
   const onTouchMove = (e: React.TouchEvent) => {
     if (startY.current == null) return;
@@ -797,6 +798,17 @@ export default function StreamApp() {
     else setPullY(0);
     startY.current = null;
   };
+
+  // Window scroll depth (the page scrolls on body, not the inner container)
+  useEffect(() => {
+    const onScroll = () => {
+      const total = window.scrollY + window.innerHeight;
+      const depth = Math.floor(total / 220);
+      setScrollDepth((d) => (depth > d ? depth : d));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   if (!onboarded) {
     return (
