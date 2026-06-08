@@ -11,6 +11,10 @@ import {
 import { BRAND } from "@/lib/brand";
 import { useLang, t, relTime, LANG_OPTIONS, type Lang } from "@/lib/i18n";
 import { tgReady, tgUserId, haptic, openExternal } from "@/lib/telegram";
+import heroFemme from "@/assets/hero-femme.jpg";
+import interstitialCasino from "@/assets/interstitial-casino.jpg";
+import lockMoney from "@/assets/lock-money.jpg";
+import marketsTrader from "@/assets/markets-trader.jpg";
 
 type Filter = "hot" | "news" | "live" | "markets";
 type NewsCat = "all" | "crypto" | "casino" | "esports";
