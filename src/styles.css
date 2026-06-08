@@ -142,3 +142,8 @@
   100% { transform: scale(1); opacity: 1; }
 }
 .celebrate { animation: celebrate 600ms cubic-bezier(.2,.8,.2,1) both; }
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
