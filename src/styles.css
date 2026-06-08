@@ -38,7 +38,7 @@
   --color-ember-hot: var(--ember-hot);
   --color-magenta: var(--magenta);
   --color-yellow: var(--yellow);
-  --font-display: "Anton", "Hubot Sans", "Arial Narrow", sans-serif;
+  --font-display: "Archivo", "Hanken Grotesk", system-ui, sans-serif;
   --font-sans: "Hanken Grotesk", "Public Sans", system-ui, sans-serif;
 }
 
@@ -90,9 +90,10 @@
     background-repeat: no-repeat, no-repeat, repeat;
     min-height: 100vh;
   }
-  h1, h2, h3, .font-display {
+  h1, h2, h3, h4, h5, h6, .font-display {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
 }
 
