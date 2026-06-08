@@ -292,7 +292,15 @@ function MatchCard({
 }) {
   const when = m.begin_at ? relTime(m.begin_at, lang) : "";
   return (
-    <div className="surface-card reveal p-3.5" style={{ animationDelay: `${delayMs}ms` }}>
+    <button
+      type="button"
+      onClick={() => {
+        haptic("medium");
+        openChannel(cfg, "live_match");
+      }}
+      className="surface-card reveal p-3.5 w-full text-left tap-95 active:press-95"
+      style={{ animationDelay: `${delayMs}ms` }}
+    >
       <div className="flex items-center justify-between mb-2 text-[11px] text-[var(--muted-foreground)]">
         <span className="font-semibold uppercase tracking-wider">
           {m.game} {m.league ? `· ${m.league}` : ""}
@@ -313,16 +321,7 @@ function MatchCard({
         </div>
         <div className="flex-1 font-display text-lg text-white truncate">{m.team2}</div>
       </div>
-      <button
-        onClick={() => {
-          haptic("medium");
-          openChannel(cfg, "live_match");
-        }}
-        className="mt-3 w-full py-2.5 rounded-xl bg-[var(--ember)] text-[var(--primary-foreground)] font-bold text-sm tap-95 active:press-95 ember-glow"
-      >
-        {t("joinChannel", lang)} →
-      </button>
-    </div>
+    </button>
   );
 }
 
