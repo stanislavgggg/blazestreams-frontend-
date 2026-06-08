@@ -291,14 +291,10 @@ function MatchCard({
   delayMs: number;
 }) {
   const when = m.begin_at ? relTime(m.begin_at, lang) : "";
+  void cfg;
   return (
-    <button
-      type="button"
-      onClick={() => {
-        haptic("medium");
-        openChannel(cfg, "live_match");
-      }}
-      className="surface-card reveal p-3.5 w-full text-left tap-95 active:press-95"
+    <div
+      className="surface-card reveal p-3.5 w-full text-left"
       style={{ animationDelay: `${delayMs}ms` }}
     >
       <div className="flex items-center justify-between mb-2 text-[11px] text-[var(--muted-foreground)]">
@@ -321,7 +317,7 @@ function MatchCard({
         </div>
         <div className="flex-1 font-display text-lg text-white truncate">{m.team2}</div>
       </div>
-    </button>
+    </div>
   );
 }
 
