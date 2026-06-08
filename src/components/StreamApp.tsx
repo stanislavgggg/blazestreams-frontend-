@@ -531,10 +531,32 @@ function Interstitial({
     trackEvent("cta_view", { surface: "interstitial" });
   }, []);
   return (
-    <div className="fixed inset-0 z-[60] flex items-end justify-center bg-black/80 backdrop-blur-sm">
-      <div className="w-full max-w-[480px] surface-card celebrate m-3 p-6 text-center">
+    <div className="fixed inset-0 z-[60] flex items-end justify-center">
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${interstitialCasino})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <div
+        className="absolute inset-0 backdrop-blur-md"
+        style={{
+          background:
+            "linear-gradient(180deg, color-mix(in oklab, var(--background) 65%, transparent), color-mix(in oklab, var(--background) 92%, transparent))",
+        }}
+      />
+      <div
+        className="relative w-full max-w-[480px] celebrate m-3 p-6 text-center rounded-2xl border ember-glow"
+        style={{
+          background:
+            "linear-gradient(180deg, color-mix(in oklab, var(--card) 92%, transparent), color-mix(in oklab, var(--background) 95%, transparent))",
+          borderColor: "color-mix(in oklab, var(--ember) 40%, var(--border))",
+        }}
+      >
         <div className="text-5xl mb-3">🔥</div>
-        <h2 className="font-display text-3xl text-white mb-2 ember-text-glow">
+        <h2 className="font-display text-2xl sm:text-3xl text-white mb-2 ember-text-glow">
           {t("joinToKeepReading", lang)}
         </h2>
         <p className="text-sm text-[var(--muted-foreground)] mb-5">
@@ -567,26 +589,43 @@ function Onboarding({ lang, onEnter }: { lang: Lang; onEnter: () => void }) {
     trackEvent("cta_view", { surface: "onboarding" });
   }, []);
   return (
-    <div className="min-h-[100dvh] flex flex-col items-center justify-center px-6 text-center">
-      <div className="celebrate">
-        <Wordmark />
-      </div>
-      <h1 className="font-display text-4xl text-white mt-6 mb-3 ember-text-glow">
-        {t("onboardTitle", lang)}
-      </h1>
-      <p className="text-[15px] text-[var(--muted-foreground)] max-w-sm mb-8">
-        {t("onboardBody", lang)}
-      </p>
-      <button
-        onClick={() => {
-          haptic("heavy");
-          onEnter();
+    <div className="min-h-[100dvh] relative overflow-hidden flex flex-col items-center justify-end px-6 pb-12 text-center">
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${heroFemme})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center 20%",
         }}
-        className="animate-heat px-8 py-4 rounded-2xl bg-[var(--ember)] text-[var(--primary-foreground)] font-extrabold text-lg ember-glow"
-      >
-        {t("enter", lang)} →
-      </button>
-      <p className="mt-10 text-[11px] text-[var(--muted-foreground)]">{t("disclaimer", lang)}</p>
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, color-mix(in oklab, var(--background) 35%, transparent) 0%, color-mix(in oklab, var(--background) 55%, transparent) 45%, var(--background) 90%), radial-gradient(ellipse at 50% 100%, color-mix(in oklab, var(--ember) 35%, transparent), transparent 60%)",
+        }}
+      />
+      <div className="relative w-full max-w-sm">
+        <div className="celebrate inline-block">
+          <Wordmark />
+        </div>
+        <h1 className="font-display text-3xl sm:text-4xl text-white mt-6 mb-3 ember-text-glow leading-[1.05]">
+          {t("onboardTitle", lang)}
+        </h1>
+        <p className="text-[14px] sm:text-[15px] text-[var(--muted-foreground)] mb-8">
+          {t("onboardBody", lang)}
+        </p>
+        <button
+          onClick={() => {
+            haptic("heavy");
+            onEnter();
+          }}
+          className="animate-heat w-full px-8 py-4 rounded-2xl bg-[var(--ember)] text-[var(--primary-foreground)] font-extrabold text-lg ember-glow"
+        >
+          {t("enter", lang)} →
+        </button>
+        <p className="mt-8 text-[11px] text-[var(--muted-foreground)]">{t("disclaimer", lang)}</p>
+      </div>
     </div>
   );
 }
