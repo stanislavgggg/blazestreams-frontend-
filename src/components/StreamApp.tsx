@@ -813,9 +813,6 @@ export default function StreamApp() {
         <Onboarding
           lang={lang}
           onEnter={() => {
-            try {
-              window.localStorage.setItem("mp_onboarded", "1");
-            } catch {}
             setOnboarded(true);
           }}
         />
