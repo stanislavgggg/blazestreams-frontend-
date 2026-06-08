@@ -7,10 +7,10 @@ export const Route = createFileRoute("/")({
       { title: "BLAZE — News that burns first" },
       {
         name: "description",
-        content: "Breaking crypto, casino and esports news plus live scores in one feed.",
+        content: "Breaking crypto, markets and esports headlines plus live scores in one fast feed.",
       },
       { property: "og:title", content: "BLAZE" },
-      { property: "og:description", content: "Breaking news + live scores in one feed." },
+      { property: "og:description", content: "Breaking news and live scores in one feed." },
     ],
   }),
   component: StreamApp,
