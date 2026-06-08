@@ -75,9 +75,9 @@ export const DICT: Dict = {
     es: "Procesamos datos mínimos de Telegram (id de usuario e idioma) para personalizar. No vendemos datos personales. Las analíticas son anónimas.",
   },
   disclaimer: {
-    en: "18+ · Informational only. Not financial or betting advice.",
-    ru: "18+ · Только информация. Не финансовый и не беттинг совет.",
-    es: "18+ · Solo informativo. No es asesoría financiera ni de apuestas.",
+    en: "18+ · Informational only. Not financial advice.",
+    ru: "18+ · Только информация. Не является финансовым советом.",
+    es: "18+ · Solo informativo. No es asesoría financiera.",
   },
   back: { en: "Back", ru: "Назад", es: "Atrás" },
   onboardTitle: {
@@ -86,9 +86,9 @@ export const DICT: Dict = {
     es: "Noticias urgentes. Marcadores en vivo. Un feed.",
   },
   onboardBody: {
-    en: "Crypto, casino, esports — the moment it happens. Subscribe to unlock the full firehose in our Telegram channel.",
-    ru: "Крипто, казино, киберспорт — в момент события. Подпишитесь, чтобы открыть полный поток в нашем Telegram-канале.",
-    es: "Cripto, casino, esports — al instante. Suscríbete para abrir el flujo completo en nuestro canal de Telegram.",
+    en: "Crypto, markets, esports — the moment it happens. Subscribe to unlock the full firehose in our Telegram channel.",
+    ru: "Крипто, рынки, киберспорт — в момент события. Подпишитесь, чтобы открыть полный поток в нашем Telegram-канале.",
+    es: "Cripto, mercados, esports — al instante. Suscríbete para abrir el flujo completo en nuestro canal de Telegram.",
   },
   enter: { en: "Enter BLAZE", ru: "Войти в BLAZE", es: "Entrar a BLAZE" },
   now: { en: "now", ru: "сейчас", es: "ahora" },
