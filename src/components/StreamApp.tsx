@@ -355,6 +355,31 @@ function MarketsBlock({
   const fngPct = fng ? Math.max(0, Math.min(100, fng.value)) : 0;
   return (
     <div className="px-3 space-y-3">
+      <div
+        className="reveal relative overflow-hidden rounded-2xl border border-[var(--border)] aspect-[16/9]"
+        style={{
+          backgroundImage: `url(${marketsTrader})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
+        }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, transparent 30%, color-mix(in oklab, var(--background) 95%, transparent) 100%), radial-gradient(ellipse at 80% 0%, color-mix(in oklab, var(--ember) 25%, transparent), transparent 60%)",
+          }}
+        />
+        <div className="absolute bottom-3 left-4 right-4">
+          <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-[var(--ember-hot)] ember-text-glow">
+            {t("markets", lang)}
+          </div>
+          <div className="font-display text-2xl text-white leading-tight ember-text-glow">
+            {t("fearGreed", lang)}
+          </div>
+        </div>
+      </div>
+
       <div className="surface-card reveal p-4">
         <div className="flex items-baseline justify-between mb-2">
           <span className="text-[11px] uppercase tracking-widest text-[var(--muted-foreground)] font-bold">
