@@ -213,28 +213,39 @@ function LockCard({
       className="reveal surface-card p-4 relative overflow-hidden"
       style={{ animationDelay: `${delayMs}ms` }}
     >
-      <div className="absolute inset-0 pointer-events-none"
+      <div
+        className="absolute inset-0 pointer-events-none opacity-60"
+        style={{
+          backgroundImage: `url(${lockMoney})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(8px) saturate(1.1)",
+          transform: "scale(1.1)",
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle at 80% 0%, color-mix(in oklab, var(--ember) 22%, transparent), transparent 60%)",
+            "linear-gradient(180deg, color-mix(in oklab, var(--background) 55%, transparent), color-mix(in oklab, var(--background) 85%, transparent)), radial-gradient(circle at 80% 0%, color-mix(in oklab, var(--ember) 30%, transparent), transparent 60%)",
         }}
       />
       <div className="relative flex items-start gap-3">
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0"
+          className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0 ember-glow"
           style={{
-            background: "color-mix(in oklab, var(--ember) 22%, transparent)",
-            color: "var(--ember)",
+            background: "color-mix(in oklab, var(--ember) 35%, transparent)",
+            color: "white",
           }}
         >
           🔒
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-[10px] font-bold uppercase tracking-widest text-[var(--ember-hot)] mb-1">
+          <div className="text-[10px] font-bold uppercase tracking-widest text-[var(--ember-hot)] mb-1 ember-text-glow">
             {t("locked", lang)}
           </div>
           <div
-            className="text-[15px] font-bold text-white/80 leading-snug select-none"
+            className="text-[15px] font-bold text-white leading-snug select-none"
             style={{ filter: "blur(5px)" }}
           >
             {fakeTitle}
