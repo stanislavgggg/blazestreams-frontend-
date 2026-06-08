@@ -970,16 +970,10 @@ export default function StreamApp() {
   return (
     <div
       ref={containerRef}
-      onScroll={(e) => {
-        const el = e.currentTarget;
-        const approxCard = 120;
-        const depth = Math.floor((el.scrollTop + el.clientHeight) / approxCard);
-        if (depth > scrollDepth) setScrollDepth(depth);
-      }}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
-      className="min-h-[100dvh] max-w-[480px] mx-auto pb-32 relative"
+      className="min-h-[100dvh] max-w-[480px] mx-auto pb-36 relative"
       style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
     >
       {/* Header */}
